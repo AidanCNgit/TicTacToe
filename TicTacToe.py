@@ -20,16 +20,30 @@ def main():
         
         if turn % 2 == 1:
             display(board)
-            currentP = int(input(f"X, Pick a Square 1-9: ")) - 1
-            while not(board[currentP] == "_"):
-                currentP = int(input(f"X, Please pick an empty square: ")) - 1
+            currentP = int(input(f"X, Please pick 1-9: ")) - 1
+            try:
+                while not(board[currentP] == "_"):
+                    currentP = int(input(f"X, Please pick an empty square: ")) - 1
+            except:
+                while currentP > 8 or currentP < 0:
+                    currentP = int(input(f"X, Please pick 1-9: ")) - 1
+            while currentP < 0:
+                currentP = int(input(f"X, Please pick 1-9: ")) - 1
+
             board[currentP] = "x"
 
         else:
             display(board)
             currentP = int(input(f"O, Pick a Square 1-9: ")) - 1
-            while not(board[currentP] == "_"):
-                currentP = int(input(f"O, Please pick an empty square: ")) - 1
+            try:
+                while not(board[currentP] == "_"):
+                    currentP = int(input(f"O, Please pick an empty square: ")) - 1
+            except:
+                while currentP > 8 or currentP < 0:
+                    currentP = int(input(f"O, Please pick 1-9: ")) - 1
+            while currentP < 0:
+                currentP = int(input(f"X, Please pick 1-9: ")) - 1
+
             board[currentP] = "o"
 
         if not("_" in board):
@@ -97,10 +111,6 @@ def display(data):
             """)
             for o in range(3):
                 print(f"{data[o + (i * 3)]:<4}",end="")
-
-
-
-    
     
 main()
 
