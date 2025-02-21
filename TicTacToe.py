@@ -70,7 +70,13 @@ def normal_game(turn, board):
         print("O wins!")
         p2score += 1
     if input("Play again? y/n") == "y":
-        normal_game()
+        board = ["_", "_", "_", 
+             "_", "_", "_", 
+             "_", "_", "_"]
+        
+        turn = 3
+
+        normal_game(turn, board)
     else:
         print(f"Thanks for playing! X won {p1score} time(s), while O won {p2score} time(s)!")
 
@@ -110,7 +116,13 @@ def ai_game(turn, board):
         print("O wins!")
         p2score += 1
     if input("Play again? y/n ") == "y":
-        ai_game()
+        board = ["_", "_", "_", 
+             "_", "_", "_", 
+             "_", "_", "_"]
+        
+        turn = 3
+
+        ai_game(turn, board)
     else:
         print(f"Thanks for playing! X won {p1score} time(s), while O won {p2score} time(s)!")
 
