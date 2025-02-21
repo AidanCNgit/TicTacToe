@@ -1,9 +1,10 @@
-
+p1score = 0
+p2score = 0
 
 def main():
 
-    p1score = 0
-    p2score = 0
+    global p1score
+    global p2score
 
     #super weird turn idea, makes it so I dont have to use an if statement to change turns though
     turn = 3
@@ -13,7 +14,7 @@ def main():
              "_", "_", "_"]
 
 
-
+    
     #game continues until win or tie
 
     while not(cfw(board, "x") == "W" or cfw(board, "o") == "W"):
